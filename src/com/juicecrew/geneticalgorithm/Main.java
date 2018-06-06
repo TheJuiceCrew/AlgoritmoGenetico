@@ -1,6 +1,5 @@
 package com.juicecrew.geneticalgorithm;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Random;
 
@@ -110,8 +109,7 @@ public class Main {
         return filho;
     }
 
-    public static Populacao mutacao (Populacao pop, int taxaDeMutacao){
-        Individuo mutate[];
+    public static void mutacao (Populacao pop, int taxaDeMutacao) {
         int nMutacao = (int)Math.ceil( pop.getTamanho() * (taxaDeMutacao / 100.00));
 
         if (nMutacao < 1) {
@@ -121,13 +119,11 @@ public class Main {
         for (int i = 1; i < nMutacao; i++) {
             int theChosenCromo = 1 + (rand.nextInt(pop.getTamanho()));
             int theChosenGene = rand.nextInt(5);
-
-
-
-
-
+            Individuo[] individuoArray = pop.getPopulacao();
+            int[] cromossomos = individuoArray[theChosenCromo].getCromossomo();
+            cromossomos[theChosenGene] = rand.nextInt(177+1);
+            individuoArray[theChosenCromo].calculateFitness();
         }
-
     }
 
 }
