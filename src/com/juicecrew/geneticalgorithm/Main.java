@@ -111,6 +111,7 @@ public class Main {
     }
 
     public static Populacao mutacao (Populacao pop, int taxaDeMutacao){
+        Individuo mutate[];
         int nMutacao = (int)Math.ceil( pop.getTamanho() * (taxaDeMutacao / 100.00));
 
         if (nMutacao < 1) {
