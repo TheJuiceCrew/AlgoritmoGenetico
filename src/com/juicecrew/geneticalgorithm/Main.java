@@ -110,4 +110,23 @@ public class Main {
         return filho;
     }
 
+    public static Populacao mutacao (Populacao pop, int taxaDeMutacao){
+        int nMutacao = (int)Math.ceil( pop.getTamanho() * (taxaDeMutacao / 100.00));
+
+        if (nMutacao < 1) {
+            nMutacao = 1;
+        }
+
+        for (int i = 1; i < nMutacao; i++) {
+            int theChosenCromo = 1 + (rand.nextInt(pop.getTamanho()));
+            int theChosenGene = rand.nextInt(5);
+
+
+
+
+
+        }
+
+    }
+
 }
